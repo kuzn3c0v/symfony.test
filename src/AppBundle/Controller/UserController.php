@@ -21,7 +21,7 @@ class UserController extends FOSRestController
     {
         $restresult = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
 
-        if ($restresult === null) {
+        if ($restresult == null) {
             return new View("there are no users exist", Response::HTTP_NOT_FOUND);
         }
         return $restresult;
